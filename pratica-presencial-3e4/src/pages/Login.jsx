@@ -15,6 +15,12 @@ function Login(){
     return(
         <>
             <h1>Login</h1>
+            <div id="formlogin">
+                <label htmlFor="emaillogin">Email:</label>
+                <input type="text" name="emaillogin" placeholder="exemplo@gmail.com"></input>
+                <label htmlFor="senhalogin">Senha:</label>
+                <input type="password" name="senhalogin" placeholder="********"></input>
+            </div>
             <button onClick={handleClick}>Entrar</button>
         </>
     )
