@@ -14,14 +14,24 @@ function Login(){
 
     return(
         <>
-            <h1>Login</h1>
-            <div id="formlogin">
-                <label htmlFor="emaillogin">Email:</label>
-                <input type="text" name="emaillogin" placeholder="exemplo@gmail.com"></input>
-                <label htmlFor="senhalogin">Senha:</label>
-                <input type="password" name="senhalogin" placeholder="********"></input>
-            </div>
-            <button onClick={handleClick}>Entrar</button>
+        <div id="div-login">
+            <form id="form-login">
+                <h1>Login</h1>
+                <div id="input-container">
+                    <div class="input-controller">
+                        <label htmlFor="email-login">Email:</label>
+                        <input type="text" name="email-login" placeholder="exemplo@gmail.com"></input>
+                    </div>
+                    <div className="input-controller">
+                        <label htmlFor="senha-login">Senha:</label>
+                        <input type="password" name="senha-login" placeholder="********"></input>
+                    </div>
+                </div>
+                <div id="button-entrar">
+                    <button onClick={handleClick}>Entrar</button>
+                </div>
+            </form>
+        </div>
         </>
     )
 }
