@@ -47,6 +47,7 @@ body{
   }
   >label{ 
     margin-bottom: .4em;
+    font-weight: bold;
   }
   >input:focus{
     outline: none;

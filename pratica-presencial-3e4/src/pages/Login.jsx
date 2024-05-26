@@ -9,11 +9,68 @@ function Login(){
     const [nome, setNome] = useState("");
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
+    
+    let verifiedEmail = false
+    let verifiedSenha = false
 
     function handleClick(event){
         event.preventDefault();
-        login({ nome, email, senha });
-        navigate("/");
+
+        if(email === ''){
+            document.getElementById('label-email').style.color = '#ec2626';
+            document.getElementById('label-email').innerText = 'Email: (Campo obrigatório)'
+            verifiedEmail = false
+            if(!email.includes('@')){
+                document.getElementById('label-email').style.color = '#ec2626';
+                document.getElementById('label-email').innerText = 'Email: (O email deve conter @)'
+                verifiedEmail = false
+            } else{
+                verifiedEmail = true
+            }
+            if(email.includes(' ')){
+                document.getElementById('label-email').style.color = '#ec2626';
+                document.getElementById('label-email').innerText = 'Email: (O email não deve conter espaços)'
+                verifiedEmail = false
+            } else{
+                verifiedEmail = true
+            }
+        } else{
+            verifiedEmail = true
+        }
+        if(senha === '' || senha === ' '){
+            document.getElementById('label-senha').style.color = '#ec2626';
+            document.getElementById('label-senha').innerText = 'Senha: (Campo obrigatório)'
+            verifiedSenha = false
+        }  else{
+            verifiedSenha = true
+        }
+
+        if(verifiedEmail && verifiedSenha){
+            login({ nome, email, senha });
+            navigate("/");
+        }
+    }
+
+    function onChangeEmail(event){
+        setEmail(event.target.value)
+        if(!event.target.value.includes('@')){
+            document.getElementById('label-email').style.color = '#ec2626';
+            document.getElementById('label-email').innerText = 'Email: (O email deve conter @)'
+        }
+        if(event.target.value.includes('@')){
+            document.getElementById('label-email').style.color = 'black';
+            document.getElementById('label-email').innerText = 'Email:'
+
+            if(event.target.value.includes(' ')){
+                document.getElementById('label-email').style.color = '#ec2626';
+                document.getElementById('label-email').innerText = 'Email: (O email não deve conter espaços)'
+            }
+            if(!event.target.value.includes(' ')){
+                document.getElementById('label-email').style.color = 'black';
+                document.getElementById('label-email').innerText = 'Email:'
+            }
+        }
+
     }
 
     return(
@@ -23,12 +80,12 @@ function Login(){
                 <h1>Login</h1>
                 <div id="input-container">
                     <div class="input-controller">
-                        <label htmlFor="email-login">Email:</label>
+                        <label htmlFor="email-login" id="label-email">Email:</label>
                         <input type="text" name="email-login" placeholder="exemplo@gmail.com"
-          onChange={(event) => setEmail(event.target.value)}></input>
+          onChange={(event) => onChangeEmail(event)}></input>
                     </div>
                     <div className="input-controller">
-                        <label htmlFor="senha-login">Senha:</label>
+                        <label htmlFor="senha-login" id="label-senha">Senha:</label>
                         <input type="password" name="senha-login" placeholder="********"
           onChange={(event) => setSenha(event.target.value)}></input>
                     </div>
