@@ -1,15 +1,19 @@
 import { Link,useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState  } from "react";
 import { AuthContext } from "../contexts/AuthContext";
 
 function Login(){
 
     const {login} = useContext(AuthContext)
     const navigate = useNavigate()
+    const [nome, setNome] = useState("");
+    const [email, setEmail] = useState("");
+    const [senha, setSenha] = useState("");
 
     function handleClick(event){
-        login("teste@teste.com","123")
-        navigate('/')
+        event.preventDefault();
+        login({ nome, email, senha });
+        navigate("/");
     }
 
     return(
@@ -20,11 +24,13 @@ function Login(){
                 <div id="input-container">
                     <div class="input-controller">
                         <label htmlFor="email-login">Email:</label>
-                        <input type="text" name="email-login" placeholder="exemplo@gmail.com"></input>
+                        <input type="text" name="email-login" placeholder="exemplo@gmail.com"
+          onChange={(event) => setEmail(event.target.value)}></input>
                     </div>
                     <div className="input-controller">
                         <label htmlFor="senha-login">Senha:</label>
-                        <input type="password" name="senha-login" placeholder="********"></input>
+                        <input type="password" name="senha-login" placeholder="********"
+          onChange={(event) => setSenha(event.target.value)}></input>
                     </div>
                 </div>
                 <div id="button-entrar">

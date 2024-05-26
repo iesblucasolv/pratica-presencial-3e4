@@ -6,6 +6,8 @@ import Register from './pages/Register'
 import Pag404 from './pages/Pag404'
 import Login from './pages/Login'
 import Layout from './components/Layout'
+import Editar from './pages/Editar'
+import Remover from './pages/Remover'
 
 function App() {
 
@@ -18,6 +20,9 @@ function App() {
           <>
             <Route element={<Layout/>}>
             <Route path='/' element={<Home/>}/>
+            <Route path="/editar/:id" element={<Editar />} />
+            <Route path='/register' element={<Register/>}/>
+            <Route path="/remover/:id" element={<Remover />} />
             </Route>
           </>
         ) : (
