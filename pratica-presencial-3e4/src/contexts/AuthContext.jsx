@@ -13,7 +13,6 @@ function AuthContextProvider(props){
         async function buscarTodosUsuarios() {
             const result = await service.listar();
             result.map(usuario=>{
-                console.log(usuario)
                 if(usuarioLogado.email === usuario.email && usuarioLogado.senha === usuario.senha){
                     const email = usuarioLogado.email
                     setUser({email, logado: true})
