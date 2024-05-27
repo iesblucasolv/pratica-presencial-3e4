@@ -29,7 +29,7 @@ async function editar(usuario) {
   const { id, nome, email, senha } = usuario;
   const response = await fetch(`${url}/${id}`, {
     method: "PUT",
-    body: JSON.stringify({ nome, email, senha  }),
+    body: JSON.stringify({ nome, email, senha }),
     headers: {
       "Content-Type": "application/json",
     },

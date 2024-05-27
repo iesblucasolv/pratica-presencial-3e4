@@ -28,14 +28,22 @@ function Remover() {
 
   return (
     <>
+    <div id="div-remover">
       <h1>Remover Usuário</h1>
-      <form onSubmit={handleSubmit}>
-        <label>Nome: </label>
-        <span>{nome}</span>
-        <label>Email: </label>
-        <span>{email}</span>
-        <input type="submit" value="Remover" />
+      <form id="remover-form" onSubmit={handleSubmit}>
+        <div id="dados-usuario-remover">
+          <div id="nome-remover"> 
+            <label>Nome: </label>
+            <span> {nome}</span>
+          </div>
+          <div id="email-remover">
+            <label>Email: </label>
+            <span> {email}</span>
+          </div>
+        </div>
+        <input id="button-remover-usuario" type="submit" value="Remover" />
       </form>
+    </div>
     </>
   );
 }

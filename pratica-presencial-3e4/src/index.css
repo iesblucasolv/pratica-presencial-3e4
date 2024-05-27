@@ -20,6 +20,8 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 #div-login{
@@ -84,7 +86,8 @@ body{
 #button-entrar{
   margin-top: -.5em;
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
+  align-items: center;
   padding: 1em 3em;
   >button{
     background-color: black;
@@ -101,4 +104,285 @@ body{
     color: black;
     border: 2px solid black;
   }
+}
+
+#main404{
+  background-color: white;
+  border-radius: 15px;
+  padding: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 10px 15px 15px rgba(0, 0, 0, 0.29);
+}
+
+#main404 h1{
+  margin-bottom: .6em;
+  border-left: 4px solid black;
+  padding-left: .4em;
+}
+
+#main404 h3{
+  margin-bottom: .5em;
+}
+
+#button404-container{
+  display: flex;
+  margin-right: 1.5em;
+  justify-content: end;
+}
+
+#main404 button {
+  background-color: black;
+  color: white;
+  border-radius: 5em;
+  padding: .4em 1em;
+  border: 2px solid black;
+  cursor: pointer;
+  font-size: .9em;
+  transition: .3s;
+}
+
+#main404 button:hover{
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+}
+
+#home-container{
+  background-color: white;
+  width: 400px;
+  border-radius: 15px;
+  padding: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 10px 15px 15px rgba(0, 0, 0, 0.29);
+}
+
+#home-container ul{
+  list-style: none;
+}
+
+#home-container ul li{
+  margin-bottom: .8em;
+  padding-bottom: .2em;
+  border-bottom: 1px solid gray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  >div{
+    padding-left: .8em;
+  }
+}
+
+#home-container header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: .6em;
+}
+
+#home-container h1{
+  border-left: 4px solid black;
+  padding-left: .4em;
+}
+
+#home-container h3{
+  margin-bottom: .4em;
+}
+
+#home-container ul li .remover-usuario button {
+  background-color: #f32424;
+  color: white;
+  border-radius: 5em;
+  padding: .3em .5em;
+  border: 2px solid #f32424;
+  cursor: pointer;
+  font-size: .9em;
+  transition: .3s;
+}
+
+#home-container ul li .remover-usuario button:hover{
+  color: #f32424;
+  background-color: white;
+}
+
+#home-container ul li .editar-usuario button {
+  background-color: #2a2a2a;
+  color: white;
+  border-radius: 5em;
+  padding: .3em .5em;
+  border: 2px solid #2a2a2a;
+  cursor: pointer;
+  font-size: .9em;
+  transition: .3s;
+}
+
+#home-container ul li .editar-usuario button:hover{
+  color: #2a2a2a;
+  background-color: white;
+}
+
+.novo-usuario button{
+  background-color: #2a2a2a;
+  color: white;
+  border-radius: 5em;
+  padding: .3em .6em;
+  border: 2px solid #2a2a2a;
+  cursor: pointer;
+  font-size: .9em;
+  transition: .3s;
+}
+
+.novo-usuario button:hover{
+  color: #2a2a2a;
+  background-color: white;
+}
+
+#ulNavigation{
+  display: flex;
+  list-style: none;
+  background-color: #2a2a2a;
+  width: 390px;
+  border-radius: 15px 15px 0 0;
+  justify-content: space-between;
+  padding-top: .1em;
+  color: white;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  >h4{
+    margin-left: 1em;
+  }
+  >div{
+    display: flex;
+    margin-right: 1.5em;
+  }
+  >div li button{
+    background-color: #2a2a2a;
+    color: white;
+    border-radius: 5em;
+    padding: .3em .6em;
+    border: 2px solid #2a2a2a;
+    cursor: pointer;
+    font-size: .9em;
+    transition: .3s;
+  }
+  >div li button:hover{
+    color: black;
+    background-color: white;
+  }
+}
+
+
+#div-register{
+  background-color: white;
+  border-radius: 15px;
+  padding: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 10px 15px 15px rgba(0, 0, 0, 0.29);
+  width: 400px;
+  >h1{
+    margin-bottom: .6em;
+    font-size: 1.9em;
+    color: black;
+    border-left: 4px solid black;
+    margin-left: .4em;
+    margin-top: 0em;
+    padding-left: .4em;
+  }
+}
+
+#div-register form #register-input-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#button-register-salvar{
+  display: flex;
+  justify-content: end;
+  >input{
+    margin-right: 3em;
+    background-color: black;
+    color: white;
+    border-radius: 5em;
+    padding: .3em .8em;
+    border: 2px solid black;
+    cursor: pointer;
+    font-size: .9em;
+    transition: .3s;
+  }
+  >input:hover{
+    color: black;
+    background-color: white;
+  }
+}
+
+#div-remover{
+  background-color: white;
+  border-radius: 15px;
+  padding: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 10px 15px 15px rgba(0, 0, 0, 0.29);
+  width: 400px;
+  >h1{
+    margin-bottom: .4em;
+    font-size: 1.9em;
+    color: black;
+    border-left: 4px solid black;
+    margin-left: .4em;
+    margin-top: 0em;
+    padding-left: .4em;
+  }
+}
+
+#dados-usuario-remover{
+  display: flex;
+  justify-content: center;
+  gap: 1.5em;
+  font-weight: bold;
+}
+
+#remover-form{
+  display: flex;
+  flex-direction: column;
+}
+
+#button-remover-usuario{
+  margin-top: 1em;
+    background-color: #f32424;
+    color: white;
+    border-radius: 5em;
+    padding: .3em .8em;
+    border: 2px solid #f32424;
+    cursor: pointer;
+    font-size: .9em;
+    transition: .3s;
+}
+
+#button-remover-usuario:hover{
+  color: #f32424;
+  background-color: white;
+  font-weight: bold;
+}
+
+#div-editar{
+  background-color: white;
+  border-radius: 15px;
+  padding: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 10px 15px 15px rgba(0, 0, 0, 0.29);
+  width: 400px;
+  >h1{
+    margin-bottom: .4em;
+    font-size: 1.9em;
+    color: black;
+    border-left: 4px solid black;
+    margin-left: .4em;
+    margin-top: 0em;
+    padding-left: .4em;
+  }
+}
+
+#editar-input-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

@@ -90,7 +90,7 @@ function Login(){
           onChange={(event) => setSenha(event.target.value)}></input>
                     </div>
                 </div>
-                <div id="button-entrar">
+                <div id="button-entrar"><Link to='/register'>Criar conta</Link>
                     <button onClick={handleClick}>Entrar</button>
                 </div>
             </form>

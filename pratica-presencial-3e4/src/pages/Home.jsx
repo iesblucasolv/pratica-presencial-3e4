@@ -15,17 +15,24 @@ function Home() {
 
   return (
     <>
-      <h1>Home</h1>
-      <Link to="/register">Registrar</Link>
+    <div id="home-container">
+      <header>
+        <h1>Home</h1>
+        <Link className="novo-usuario" to="/register"><button>Registrar novo usuário</button></Link>
+      </header>
+      <h3>Usuários registrados</h3>
       <ul>
         {meusUsuarios.map((usuario, key) => (
           <li key={key}>
             {usuario.nome} - {usuario.email}{" "}
-            <Link to={`/editar/${usuario.id}`}>Editar</Link>{" "}
-            <Link to={`/remover/${usuario.id}`}>Remover</Link>
+            <div id="actions-usuarios">
+              <Link className="editar-usuario" to={`/editar/${usuario.id}`}><button>Editar</button></Link>{" "}
+              <Link className="remover-usuario" to={`/remover/${usuario.id}`}><button>Remover</button></Link>
+            </div>
           </li>
         ))}
       </ul>
+    </div>
     </>
   );
 }

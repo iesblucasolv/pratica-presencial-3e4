@@ -15,8 +15,11 @@ function Layout(){
     return(
         <>
             <ul id="ulNavigation">
-                <li><NavLink to="/"><button>Home</button></NavLink></li>
-                <li><button onClick={handleClick}>Sair</button></li>
+                <h4>Menu</h4>
+                <div id="nav-buttons">
+                    <li><NavLink to="/"><button>Home</button></NavLink></li>
+                    <li><button onClick={handleClick}>Sair</button></li>
+                </div>
             </ul>
             <main>
                 <Outlet/>
